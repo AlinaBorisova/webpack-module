@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   soundCards.forEach(card => {
     card.addEventListener('click', () => {
       const allAudio = document.querySelectorAll('audio');
+      const img = card.querySelector('img[src*="bg.jpg"]');
+      const bgImage = img ? img.src : null;
+      if (bgImage) {
+        document.body.style.backgroundImage = `url(${bgImage})`;
+      }
 
       const audio = card.querySelector('audio');
 

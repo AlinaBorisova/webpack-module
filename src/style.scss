@@ -18,6 +18,26 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-image 0.3s ease-in-out;
+}
+
+input[type="range"] {
+  width: 100%;
+  max-width: 300px;
+  height: 10px;
+  background: #fff;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  margin: 30px auto;
+  display: block;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 h1 {
