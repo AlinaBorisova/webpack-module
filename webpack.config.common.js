@@ -5,10 +5,9 @@ const path = require('path');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  entry: './index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
     clean: true,
   },
   plugins: [
@@ -31,6 +30,9 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
   ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   module: {
     rules: [
       {
@@ -51,6 +53,11 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.[tj]sx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },

@@ -6,15 +6,21 @@ const commonConfig = require('./webpack.config.common');
 module.exports = merge(commonConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
+  output: {
+    filename: '[name].js',
+  },
   devServer: {
     port: 3000,
     hot: true,
     open: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   plugins: [
     new ESLintPlugin({
       context: path.resolve(__dirname, 'src'),
-      extensions: ['js'],
+      extensions: ['ts'],
       exclude: ['node_modules', 'dist'],
     }),
   ],

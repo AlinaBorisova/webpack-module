@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"allowJs": true,
+		"rootDir": "./src",
+		"target": "ES2020",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"strict": true,
+		"sourceMap": true
+	},
+	"include": [
+		"./src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
+}
